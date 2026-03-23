@@ -6,9 +6,13 @@ theme:
   palette:
     primary: blue
     accent: orange
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search
 
 nav:
-  - 📋 Выводы: resume.md
+  - 📋 Выводы: resume.md                    ← Пути ОТНОСИТЕЛЬНО папки docs/
   - 📘 1С:УНФ:
     - Интерфейс: 1c_unf/interface_unf.md
   - 📘 1С:КА:
@@ -17,3 +21,9 @@ nav:
   - 🖼️ Скриншоты:
     - УНФ: img/unf/
     - КА: img/ka/
+
+markdown_extensions:
+  - toc
+  - tables
+  - admonition
+  - codehilite
