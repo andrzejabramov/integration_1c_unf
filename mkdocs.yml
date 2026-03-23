@@ -39,10 +39,6 @@ nav:
     - Отчёты: 1c_algoritm/13_reports_catalog.md
     - Troubleshooting: 1c_algoritm/14_troubleshooting.md
 
-  - 🖼️ Скриншоты:
-    - УНФ: img/unf/
-    - КА: img/ka/
-
 markdown_extensions:
   - toc
   - tables
