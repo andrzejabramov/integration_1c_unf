@@ -1,0 +1,2123 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Сравнительный анализ УНФ и КА">
+      
+      
+      
+        <link rel="canonical" href="https://andrzejabramov.github.io/integration_1c_unf/1c_algoritm/14_troubleshooting/">
+      
+      
+        <link rel="prev" href="../13_reports_catalog/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Troubleshooting - 1С: Внедрение — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-header__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            1С: Внедрение — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resume/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📋 Выводы
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_unf/interface_unf/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:УНФ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_ka/interface_ka/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:КА
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_settings_algoritm/" class="md-tabs__link">
+          
+  
+  
+  📁 Алгоритмы (общие)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-nav__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    1С: Внедрение — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Выводы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:УНФ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:УНФ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_unf/interface_unf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:КА
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:КА
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_ka/interface_ka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📁 Алгоритмы (общие)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📁 Алгоритмы (общие)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_settings_algoritm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_initial_balances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начальные остатки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_sales_department/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отдел продаж
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_purchases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закупки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_warehouse_materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Склад (материалы)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_production_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Производство
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_otk_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ОТК
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_salary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Зарплата
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_sales_shipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отгрузка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_cost_calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Себестоимость
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_month_closing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закрытие месяца
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_reports_catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 🎯 Как пользоваться этим справочником
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔴 Общие проблемы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔴 Общие проблемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Не могу войти в систему
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Программа тормозит или долго грузится
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Не сохраняется / не проводится документ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 📦 Складские проблемы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 📦 Складские проблемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Отрицательные остатки (Минуса)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Материалы не списываются в производство
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Проблемы с передачей в цех
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🏭 Производственные проблемы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🏭 Производственные проблемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Не формируется потребность в закупках
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Не начисляется зарплата
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Неправильная себестоимость
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 💰 Проблемы с закупками и продажами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 💰 Проблемы с закупками и продажами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Закупки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Продажи и отгрузки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 🔗 Проблемы с синхронизацией (текущая конфигурация ↔ Бухгалтерия)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 📅 Проблемы при закрытии месяца
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 🆘 Чек-лист действий при любой ошибке
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 🛠 Инструменты диагностики
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 🛠 Инструменты диагностики">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Журнал регистрации
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Универсальный отчет
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 📞 Контакты поддержки ООО «КБМ»
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 🎯 Как пользоваться этим справочником
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔴 Общие проблемы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔴 Общие проблемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Не могу войти в систему
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Программа тормозит или долго грузится
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Не сохраняется / не проводится документ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 📦 Складские проблемы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 📦 Складские проблемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Отрицательные остатки (Минуса)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Материалы не списываются в производство
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Проблемы с передачей в цех
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🏭 Производственные проблемы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🏭 Производственные проблемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Не формируется потребность в закупках
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Не начисляется зарплата
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Неправильная себестоимость
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 💰 Проблемы с закупками и продажами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 💰 Проблемы с закупками и продажами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Закупки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Продажи и отгрузки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 🔗 Проблемы с синхронизацией (текущая конфигурация ↔ Бухгалтерия)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 📅 Проблемы при закрытии месяца
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 🆘 Чек-лист действий при любой ошибке
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 🛠 Инструменты диагностики
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 🛠 Инструменты диагностики">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Журнал регистрации
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Универсальный отчет
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 📞 Контакты поддержки ООО «КБМ»
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1">🚑 Справочник решения типовых проблем и ошибок (1С)</h1>
+<p><strong>ООО «КБМ» | Версия: 1.0 | Дата: 21.03.2026</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Ответственные</strong></th>
+<th style="text-align: left;">Администратор 1С, Экономист, Все пользователи</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Цель</strong></td>
+<td style="text-align: left;">Оперативное самостоятельное устранение типовых ошибок при работе в системе.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Принцип</strong></td>
+<td style="text-align: left;">«Сначала проверь сам, потом зови админа».</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Статус</strong></td>
+<td style="text-align: left;">✅ Готов к использованию</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1_1">1. 🎯 Как пользоваться этим справочником</h2>
+<p>Документ разделен на логические блоки по видам работ:
+*   🔴 <strong>Общие проблемы:</strong> Вход, тормоза, сохранение.
+*   📦 <strong>Склад:</strong> Отрицательные остатки, списания.
+*   🏭 <strong>Производство:</strong> Потребности, зарплата, себестоимость.
+*   💰 <strong>Финансы и закупки:</strong> Цены, оплаты.
+*   🔗 <strong>Синхронизация:</strong> Ошибки обмена с Бухгалтерией.</p>
+<blockquote>
+<p>⚠️ <strong>ВАЖНО:</strong> Если вашей проблемы нет в списке или предложенные решения не помогли — <strong>не пытайтесь удалять документы или проводить эксперименты</strong>. Сделайте скриншот ошибки и обратитесь к администратору.</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 🔴 Общие проблемы</h2>
+<h3 id="21">2.1. Не могу войти в систему</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>«Пользователь не найден»</strong></td>
+<td style="text-align: left;">Вас еще не добавили в базу.</td>
+<td style="text-align: left;">Обратиться к администратору для создания учетной записи.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>«Неверный пароль»</strong></td>
+<td style="text-align: left;">Ошибка ввода, Caps Lock или смена раскладки.</td>
+<td style="text-align: left;">Проверить клавиатуру. Если не помогает — запросить сброс пароля у админа.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Пустой интерфейс после входа</strong></td>
+<td style="text-align: left;">Выбран неверный профиль доступа.</td>
+<td style="text-align: left;">Выйти из системы. При входе выбрать правильный профиль (например, «Мастер цеха»).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2. Программа тормозит или долго грузится</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Долго открывается отчет</strong></td>
+<td style="text-align: left;">Слишком большой период или отсутствие отборов.</td>
+<td style="text-align: left;">Сузить период (например, смотреть не год, а месяц). Использовать фильтры по складу/контрагенту.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Зависание при проведении</strong></td>
+<td style="text-align: left;">Высокая нагрузка на сервер в конце месяца.</td>
+<td style="text-align: left;">Подождать несколько минут. Планировать тяжелые операции на утро.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Медленная работа на ПК</strong></td>
+<td style="text-align: left;">Нехватка ресурсов компьютера.</td>
+<td style="text-align: left;">Закрыть лишние программы (браузер с кучей вкладок). Сообщить админу, если ПК старый.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3. Не сохраняется / не проводится документ</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Красные рамки вокруг полей</strong></td>
+<td style="text-align: left;">Не заполнены обязательные реквизиты.</td>
+<td style="text-align: left;">Заполнить все поля, подсвеченные красным (Контрагент, Склад, Договор).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ошибка «Нет прав»</strong></td>
+<td style="text-align: left;">У вас нет прав на эту операцию.</td>
+<td style="text-align: left;">Обратиться к руководителю или админу для расширения прав.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 📦 Складские проблемы</h2>
+<h3 id="31">3.1. Отрицательные остатки (Минуса)</h3>
+<p><em>Самая критичная ошибка, блокирующая закрытие месяца.</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>В отчете «Остатки товаров» минус</strong></td>
+<td style="text-align: left;">Документ расхода проведен раньше документа прихода.</td>
+<td style="text-align: left;">1. Найти товар с минусом.<br>2. Открыть «Движение товаров».<br>3. Найти документ, ушедший «вперед».<br>4. Перепровести документы в хронологическом порядке (сначала приход, потом расход).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Списание материала, которого нет</strong></td>
+<td style="text-align: left;">Требование-накладная создана до поступления металла.</td>
+<td style="text-align: left;">Проверить дату поступления. Если металл еще едет — отложить проведение требования.</td>
+</tr>
+</tbody>
+</table>
+<p>🔍 <strong>Алгоритм поиска минуса:</strong>
+1.  Сформировать отчет <code>Остатки товаров</code> на дату возникновения проблемы.
+2.  Найти строку с отрицательным количеством.
+3.  Двойным кликом провалиться в <code>Движение товаров</code> по этой позиции.
+4.  Посмотреть, какой документ первым увел остаток в минус. Исправить его дату или предшествующие документы.</p>
+<h3 id="32">3.2. Материалы не списываются в производство</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>В отчете производства пусто</strong></td>
+<td style="text-align: left;">Не нажата кнопка заполнения.</td>
+<td style="text-align: left;">В документе <code>Отчет производства за смену</code> нажать <strong>Заполнить</strong> → <strong>По спецификации</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>«Недостаточно материалов»</strong></td>
+<td style="text-align: left;">Материалы физически есть на складе сырья, но не переданы в цех.</td>
+<td style="text-align: left;">Оформить <code>Требование-накладную</code> со склада сырья на склад-кладовую цеха.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Нет спецификации</strong></td>
+<td style="text-align: left;">Для изделия не настроен состав.</td>
+<td style="text-align: left;">Обратиться к технологу для создания спецификации.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3. Проблемы с передачей в цех</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ошибка «Неверный тип склада»</strong></td>
+<td style="text-align: left;">Пытаетесь передать материал на обычный склад вместо кладовой.</td>
+<td style="text-align: left;">В поле «Склад-получатель» выбирать только склады с типом <strong>«Кладовая»</strong> (Цех №1, Цех №2).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 🏭 Производственные проблемы</h2>
+<h3 id="41">4.1. Не формируется потребность в закупках</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Отчет «Потребности» пуст</strong></td>
+<td style="text-align: left;">Заказ на производство не проведен.</td>
+<td style="text-align: left;">Провести <code>Заказ на производство</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Потребность не считается</strong></td>
+<td style="text-align: left;">В заказе не заполнены материалы.</td>
+<td style="text-align: left;">Открыть заказ, вкладка «Материалы», нажать <strong>Заполнить по спецификации</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2. Не начисляется зарплата</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Зарплата = 0</strong></td>
+<td style="text-align: left;">Пуста вкладка «Операции».</td>
+<td style="text-align: left;">В <code>Отчете производства за смену</code> заполнить вкладку <strong>Операции</strong> (нажать «Заполнить по спецификации»).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Наряд не оплачивается</strong></td>
+<td style="text-align: left;">Наряд не закрыт.</td>
+<td style="text-align: left;">В документе <code>Сдельный наряд</code> установить галочку <strong>«Закрыт»</strong> и указать дату закрытия.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Нет расценки</strong></td>
+<td style="text-align: left;">В технологической операции не указана цена.</td>
+<td style="text-align: left;">Обратиться к экономисту для заполнения расценки в справочнике «Технологические операции».</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3. Неправильная себестоимость</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Себестоимость нулевая</strong></td>
+<td style="text-align: left;">Нет цен в поступлении материалов.</td>
+<td style="text-align: left;">Проверить документы поступления от поставщиков (должна быть цена).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Себестоимость слишком высокая</strong></td>
+<td style="text-align: left;">Двойное списание или лишний перерасход.</td>
+<td style="text-align: left;">Проверить отчеты производства на дубли. Проверить акты списания брака.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 💰 Проблемы с закупками и продажами</h2>
+<h3 id="51">5.1. Закупки</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Кнопка «Оформить заказ» неактивна</strong></td>
+<td style="text-align: left;">Не отмечены строки в отчете потребностей.</td>
+<td style="text-align: left;">Поставить галочки слева от нужных строк перед нажатием кнопки.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Цена не подставляется</strong></td>
+<td style="text-align: left;">Не зарегистрирована цена поставщика.</td>
+<td style="text-align: left;">В документе поступления нажать <strong>Еще</strong> → <strong>Зарегистрировать цены поставщиков</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2. Продажи и отгрузки</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>«Недостаточно товара»</strong></td>
+<td style="text-align: left;">Товар есть, но лежит на складе ОТК.</td>
+<td style="text-align: left;">Провести контроль качества (ОТК), чтобы товар переместился на <code>Склад готовой продукции</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Долг клиента не гасится</strong></td>
+<td style="text-align: left;">Оплата не привязана к документу.</td>
+<td style="text-align: left;">В документе «Поступление денег» указать основание (Заказ или Накладную).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 🔗 Проблемы с синхронизацией (текущая конфигурация ↔ Бухгалтерия)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Симптом</th>
+<th style="text-align: left;">Причина</th>
+<th style="text-align: left;">Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>«Не удалось подключиться»</strong></td>
+<td style="text-align: left;">Неверный путь к базе БП или БП закрыта.</td>
+<td style="text-align: left;">Проверить путь к файлу базы. Убедиться, что бухгалтер вышел из БП (при файловом варианте).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Дубли контрагентов в БП</strong></td>
+<td style="text-align: left;">Не выполнено сопоставление.</td>
+<td style="text-align: left;">В настройках синхронизации нажать <strong>Сопоставить данные</strong>. В БП удалить дубли через обработку «Поиск и удаление дублей».</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Документы не уходят в БП</strong></td>
+<td style="text-align: left;">Стоит «Дата запрета загрузки».</td>
+<td style="text-align: left;">В БП: <code>Администрирование</code> → <code>Синхронизация</code> → <code>Даты запрета загрузки</code>. Проверить актуальность даты.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Зарплата не синхронизируется</strong></td>
+<td style="text-align: left;">Не включен функционал зарплаты в 1С.</td>
+<td style="text-align: left;">В 1С: <code>Настройки</code> → <code>Больше возможностей</code> → включить <code>Управление персоналом</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. 📅 Проблемы при закрытии месяца</h2>
+<p>Если процедура <code>Закрытие месяца</code> выдает ошибку (красный крестик):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Текст ошибки</th>
+<th style="text-align: left;">Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>«Обнаружены отрицательные остатки»</strong></td>
+<td style="text-align: left;">См. п. 3.1. Исправить минусы на складах.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>«Не все документы проведены»</strong></td>
+<td style="text-align: left;">Проверить <code>Журнал документов</code> за месяц. Провести всё.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>«Не введены косвенные расходы»</strong></td>
+<td style="text-align: left;">Создать документ <code>Ввод косвенных расходов</code> (аренда, свет и т.д.).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>«Не начислена зарплата»</strong></td>
+<td style="text-align: left;">Провести документ <code>Начисление зарплаты</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>«Не заполнены спецификации»</strong></td>
+<td style="text-align: left;">Создать спецификации для всей выпущенной продукции.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ℹ️ После исправления каждой ошибки нужно нажимать кнопку <strong>Выполнить закрытие месяца</strong> заново.</p>
+</blockquote>
+<hr />
+<h2 id="8-">8. 🆘 Чек-лист действий при любой ошибке</h2>
+<p>Прежде чем звонить администратору, пройдите этот путь:</p>
+<ol>
+<li>[ ] <strong>Прочитать текст ошибки.</strong> Часто там прямо написано, что делать (например, «Заполните поле Х»).</li>
+<li>[ ] <strong>Проверить обязательные поля.</strong> Нет ли красных рамок?</li>
+<li>[ ] <strong>Проверить даты.</strong> Не стоит ли дата расхода раньше даты прихода?</li>
+<li>[ ] <strong>Попробовать повторить.</strong> Иногда это сбой сети.</li>
+<li>[ ] <strong>Перезайти в программу.</strong> Выйти и зайти снова.</li>
+<li>[ ] <strong>Если не помогло — писать админу.</strong></li>
+</ol>
+<p>📩 <strong>Что написать администратору:</strong>
+*   Текст ошибки (лучше скриншот).
+*   Что вы делали в момент ошибки (какой документ, какая кнопка).
+*   Время возникновения.
+*   Название вашего компьютера (если их много).</p>
+<hr />
+<h2 id="9">9. 🛠 Инструменты диагностики</h2>
+<h3 id="_1">Журнал регистрации</h3>
+<p>Позволяет увидеть скрытые ошибки системы.
+*   <strong>Путь:</strong> <code>Администрирование</code> → <code>Журнал регистрации</code>.
+*   <strong>Как использовать:</strong> Поставить отбор по событию <code>Ошибка</code> и текущей дате. Читать подробное описание.</p>
+<h3 id="_2">Универсальный отчет</h3>
+<p>Помогает найти любой документ или проверить движения.
+*   <strong>Путь:</strong> <code>Отчеты</code> → <code>Универсальный отчет</code>.
+*   <strong>Как использовать:</strong> Выбрать объект (например, «Документ»), указать период и фильтр. Показывает всё, что есть в базе.</p>
+<hr />
+<h2 id="10">10. 📞 Контакты поддержки ООО «КБМ»</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Уровень</th>
+<th style="text-align: left;">Кто решает</th>
+<th style="text-align: left;">Контакты</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1 линия</strong></td>
+<td style="text-align: left;">Ответственный пользователь (в цеху/отделе)</td>
+<td style="text-align: left;">Внутренний тел. ...</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2 линия</strong></td>
+<td style="text-align: left;">Администратор 1С (Андрей Абрамов)</td>
+<td style="text-align: left;">Внутренний тел. ... / Telegram</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3 линия</strong></td>
+<td style="text-align: left;">Внешний франчайзи (договорная поддержка)</td>
+<td style="text-align: left;">Тел. ...</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Документ разработан для внутреннего использования ООО «КБМ». Копирование без согласования запрещено.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

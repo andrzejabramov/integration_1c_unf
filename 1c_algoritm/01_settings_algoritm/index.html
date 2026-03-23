@@ -1,0 +1,2081 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Сравнительный анализ УНФ и КА">
+      
+      
+      
+        <link rel="canonical" href="https://andrzejabramov.github.io/integration_1c_unf/1c_algoritm/01_settings_algoritm/">
+      
+      
+        <link rel="prev" href="../../1c_ka/interface_ka/">
+      
+      
+        <link rel="next" href="../02_initial_balances/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Настройка - 1С: Внедрение — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-header__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            1С: Внедрение — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resume/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📋 Выводы
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_unf/interface_unf/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:УНФ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_ka/interface_ka/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:КА
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  📁 Алгоритмы (общие)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-nav__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    1С: Внедрение — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Выводы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:УНФ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:УНФ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_unf/interface_unf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:КА
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:КА
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_ka/interface_ka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📁 Алгоритмы (общие)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📁 Алгоритмы (общие)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 🎯 Цели и Задачи
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 👥 Схема взаимодействия
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🛠 Этап 1: Подготовка конфигурации
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🛠 Этап 1: Подготовка конфигурации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Чек-лист обязательных опций
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Создание структуры складов (НЗП)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Настройка статей затрат
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🔐 Этап 2: Настройка групп доступа (Ролевая модель)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🔐 Этап 2: Настройка групп доступа (Ролевая модель)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Алгоритм создания группы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Матрица профилей для ООО «КБМ»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-rls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. 🔒 Настройка ограничений (RLS) — Критический этап!
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. 🔒 Настройка ограничений (RLS) — Критический этап!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример настройки для Мастера цеха:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 👤 Этап 3: Создание пользователей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 👤 Этап 3: Создание пользователей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Шаг 1: Заведение сотрудника
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Шаг 2: Создание учетной записи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Реестр пользователей (Шаблон)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 🧪 Этап 4: Тестирование и приемка
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 🧪 Этап 4: Тестирование и приемка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Чек-лист проверки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-5-1-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 🔗 Этап 5: Синхронизация с 1С:Бухгалтерией (3.0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ✅ Итоговый контрольный лист
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_initial_balances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начальные остатки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_sales_department/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отдел продаж
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_purchases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закупки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_warehouse_materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Склад (материалы)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_production_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Производство
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_otk_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ОТК
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_salary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Зарплата
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_sales_shipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отгрузка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_cost_calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Себестоимость
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_month_closing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закрытие месяца
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_reports_catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 🎯 Цели и Задачи
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 👥 Схема взаимодействия
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🛠 Этап 1: Подготовка конфигурации
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🛠 Этап 1: Подготовка конфигурации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Чек-лист обязательных опций
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Создание структуры складов (НЗП)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Настройка статей затрат
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🔐 Этап 2: Настройка групп доступа (Ролевая модель)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🔐 Этап 2: Настройка групп доступа (Ролевая модель)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Алгоритм создания группы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Матрица профилей для ООО «КБМ»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-rls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. 🔒 Настройка ограничений (RLS) — Критический этап!
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. 🔒 Настройка ограничений (RLS) — Критический этап!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример настройки для Мастера цеха:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 👤 Этап 3: Создание пользователей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 👤 Этап 3: Создание пользователей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Шаг 1: Заведение сотрудника
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Шаг 2: Создание учетной записи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Реестр пользователей (Шаблон)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 🧪 Этап 4: Тестирование и приемка
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 🧪 Этап 4: Тестирование и приемка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Чек-лист проверки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-5-1-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 🔗 Этап 5: Синхронизация с 1С:Бухгалтерией (3.0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ✅ Итоговый контрольный лист
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1">📘 Инструкция: Первоначальная настройка прав доступа в 1С</h1>
+<p><strong>ООО «КБМ» | Версия документа: 1.1 | Дата: 21.03.2026</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Ответственный</strong></th>
+<th style="text-align: left;">Администратор 1С / Руководитель проекта</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Цель</strong></td>
+<td style="text-align: left;">Настройка системы безопасности, создание пользователей и разграничение прав доступа для производственного персонала.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Статус</strong></td>
+<td style="text-align: left;">✅ Готово к внедрению</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1_1">1. 🎯 Цели и Задачи</h2>
+<p>Данный документ регламентирует действия администратора при старте системы. Корректная настройка на этом этапе гарантирует:
+*   🔒 <strong>Безопасность данных:</strong> Сотрудники видят только то, что нужно для работы.
+*   🏭 <strong>Изоляцию цехов:</strong> Мастера не видят задания смежных участков.
+*   💰 <strong>Защиту финансовой информации:</strong> Производственный персонал не имеет доступа к ценам закупки и зарплате других отделов.
+*   🚀 <strong>Быстрый старт:</strong> Пользователи сразу получают доступ к своим рабочим местам.</p>
+<blockquote>
+<p>⛔ <strong>ВАЖНО:</strong> Все настройки выполняются <strong>ДО</strong> начала ввода оперативных документов. Изменение прав «на ходу» при активной работе может привести к ошибкам доступа и блокировке документов.</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 👥 Схема взаимодействия</h2>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">LR</span>
+<span class="w">    </span><span class="n">A</span><span class="p">[</span><span class="err">Руководитель</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Утверждает</span><span class="w"> </span><span class="err">список</span><span class="w"> </span><span class="err">должностей</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="err">Администратор</span><span class="w"> </span><span class="mi">1</span><span class="err">С</span><span class="p">)</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Создает</span><span class="w"> </span><span class="err">справочник</span><span class="w"> </span><span class="err">Сотрудники</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="err">База</span><span class="w"> </span><span class="err">данных</span><span class="p">]</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Настраивает</span><span class="w"> </span><span class="err">Группы</span><span class="w"> </span><span class="err">доступа</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">C</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Создает</span><span class="w"> </span><span class="err">Учетные</span><span class="w"> </span><span class="err">записи</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">C</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Тестовый</span><span class="w"> </span><span class="err">вход</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="err">Пользователи</span><span class="p">]</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Подтверждение</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">A</span>
+</code></pre></div>
+
+<hr />
+<h2 id="3-1">3. 🛠 Этап 1: Подготовка конфигурации</h2>
+<p>Прежде чем создавать пользователей, необходимо активировать нужный функционал. Без этого некоторые пункты меню будут скрыты.</p>
+<p><strong>Путь:</strong> <code>Настройки</code> → <code>Общие настройки</code> → <code>Вкладка "Больше возможностей: настройка программы"</code></p>
+<h3 id="31-">3.1. Чек-лист обязательных опций</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Раздел</th>
+<th style="text-align: left;">Опция</th>
+<th style="text-align: center;">Статус</th>
+<th style="text-align: left;">💡 Комментарий для КБМ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Продажи</strong></td>
+<td style="text-align: left;">Заказы покупателей</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Основа работы отдела продаж</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Продажи</strong></td>
+<td style="text-align: left;">Коммерческие предложения</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Для участия в тендерах</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Закупки</strong></td>
+<td style="text-align: left;">Партии номенклатуры</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><strong>Критично!</strong> Прослеживаемость металла</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Закупки</strong></td>
+<td style="text-align: left;">Характеристики номенклатуры</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Разные типоразмеры наконечников</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Склад</strong></td>
+<td style="text-align: left;">Несколько складов</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Разделение: Сырье, Цеха, Готовая продукция</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Склад</strong></td>
+<td style="text-align: left;">Ордерные склады</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Включать только если есть зона приемки/отгрузки отдельно от хранения</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Производство</strong></td>
+<td style="text-align: left;">Производство</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><strong>Критично!</strong> Базовый блок</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Производство</strong></td>
+<td style="text-align: left;">Технологические операции</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Для детального учета этапов (токарка, сборка)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Производство</strong></td>
+<td style="text-align: left;">Рабочие центры</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Включить, если нужно планировать загрузку станков по времени</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Персонал</strong></td>
+<td style="text-align: left;">Зарплата и кадры</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Для расчета сдельной оплаты рабочим</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Финансы</strong></td>
+<td style="text-align: left;">Себестоимость</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><strong>Критично!</strong> Расчет стоимости изделия</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CRM</strong></td>
+<td style="text-align: left;">CRM</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">История взаимодействий с клиентами</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> После включения опций может потребоваться перезапуск базы 1С в режиме «Предприятие».</p>
+</blockquote>
+<h3 id="32">3.2. Создание структуры складов (НЗП)</h3>
+<p>Для корректного учета незавершенного производства (НЗП) создадим виртуальные кладовые для цехов.</p>
+<p><strong>Путь:</strong> <code>НСИ и Администрирование</code> → <code>Склады и магазины</code> → <code>Склады</code> → <code>Создать</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Тип склада</th>
+<th style="text-align: left;">Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Основной склад (Сырье)</code></td>
+<td style="text-align: left;">Склад</td>
+<td style="text-align: left;">Хранение металла и комплектующих</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Цех Токарный (НЗП)</code></td>
+<td style="text-align: left;">Кладовая</td>
+<td style="text-align: left;">Детали в обработке</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Цех Сборочный (НЗП)</code></td>
+<td style="text-align: left;">Кладовая</td>
+<td style="text-align: left;">Узлы в сборке</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Склад ОТК</code></td>
+<td style="text-align: left;">Кладовая</td>
+<td style="text-align: left;">Продукция на проверке</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Склад Готовой Продукции</code></td>
+<td style="text-align: left;">Склад</td>
+<td style="text-align: left;">Товары на отгрузку</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3. Настройка статей затрат</h3>
+<p><strong>Путь:</strong> <code>Финансовый результат и контроллинг</code> → <code>Статьи затрат</code> → <code>Создать</code></p>
+<p>Необходимо создать минимум 4 статьи для корректного расчета себестоимости:
+1.  📦 <strong>Материалы</strong> (Тип: <em>Материальные расходы</em>) — для списания металла.
+2.  👷 <strong>Зарплата производственная</strong> (Тип: <em>Оплата труда</em>) — для сдельщиков.
+3.  ⚡ <strong>Энергия и амортизация</strong> (Тип: <em>Прочие расходы</em>) — общепроизводственные затраты.
+4.  🏢 <strong>АУП и офис</strong> (Тип: <em>Прочие расходы</em>) — общехозяйственные затраты.</p>
+<hr />
+<h2 id="4-2">4. 🔐 Этап 2: Настройка групп доступа (Ролевая модель)</h2>
+<p>В 1С права настраиваются через <strong>Группы доступа</strong>. Мы будем использовать готовые шаблоны системы, модифицируя их под нужды КБМ.</p>
+<p><strong>Путь:</strong> <code>Администрирование</code> → <code>Настройка пользователей и прав</code> → <code>Группы доступа</code></p>
+<h3 id="41">4.1. Алгоритм создания группы</h3>
+<ol>
+<li>Нажать <code>Создать</code>.</li>
+<li>Выбрать шаблон (например, «Менеджер по продажам»).</li>
+<li>Дать понятное имя (например, <code>КБМ - Менеджер по продажам</code>).</li>
+<li>Настроить состав прав (галочки в списке).</li>
+<li><strong>Важно:</strong> Настроить ограничения (см. п. 4.3).</li>
+</ol>
+<h3 id="42">4.2. Матрица профилей для ООО «КБМ»</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Роль</th>
+<th style="text-align: left;">Базовый шаблон</th>
+<th style="text-align: left;">Разрешено ✅</th>
+<th style="text-align: left;">Запрещено ❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Менеджер по продажам</strong></td>
+<td style="text-align: left;"><code>Менеджер по продажам</code></td>
+<td style="text-align: left;">Продажи, CRM, Клиенты, КП</td>
+<td style="text-align: left;">Закупки (цены), Производство, Финансы</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Снабженец</strong></td>
+<td style="text-align: left;"><code>Менеджер по закупкам</code></td>
+<td style="text-align: left;">Закупки, Поставщики, Склад (остатки)</td>
+<td style="text-align: left;">Продажи (цены), Производство, Зарплата</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Технолог</strong></td>
+<td style="text-align: left;"><code>Конструктор / Технолог</code></td>
+<td style="text-align: left;">Номенклатура, Спецификации, Тех. карты</td>
+<td style="text-align: left;">Закупки (цены), Продажи, Зарплата</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Инженер ПДО</strong></td>
+<td style="text-align: left;"><code>Менеджер по производству</code></td>
+<td style="text-align: left;">Планирование, Потребности, Заказы пр-ва</td>
+<td style="text-align: left;">Финансы, Зарплата (конкретные суммы)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Мастер цеха</strong></td>
+<td style="text-align: left;"><code>Производитель</code> (новый)</td>
+<td style="text-align: left;">Наряд-задания (свои), Отчеты пр-ва, Требования</td>
+<td style="text-align: left;">Все финансы, Закупки, Продажи, Чужие цеха</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Кладовщик</strong></td>
+<td style="text-align: left;"><code>Кладовщик</code></td>
+<td style="text-align: left;">Складские документы, Инвентаризация</td>
+<td style="text-align: left;">Производство (редактирование), Финансы</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ОТК</strong></td>
+<td style="text-align: left;"><code>Контроль качества</code> (новый)</td>
+<td style="text-align: left;">Акты контроля, Браковка</td>
+<td style="text-align: left;">Создание документов пр-ва, Финансы</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Экономист</strong></td>
+<td style="text-align: left;"><code>Руководитель</code> + права</td>
+<td style="text-align: left;">Все отчеты, Себестоимость, Нормативы</td>
+<td style="text-align: left;">Проведение документов (только чтение)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Главный инженер</strong></td>
+<td style="text-align: left;"><code>Руководитель производства</code></td>
+<td style="text-align: left;">Всё производство, Спецификации, Планы</td>
+<td style="text-align: left;">Регламентированный учет (БУ), Банк, Касса</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Директор</strong></td>
+<td style="text-align: left;"><code>Руководитель</code></td>
+<td style="text-align: left;">Все отчеты, Монитор руководителя</td>
+<td style="text-align: left;">Проведение документов (опционально)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-rls">4.3. 🔒 Настройка ограничений (RLS) — Критический этап!</h3>
+<p>Чтобы мастер цеха не видел чужие заказы, а менеджер — чужих клиентов, используем механизм <strong>«Ограничение доступа на уровне записей»</strong>.</p>
+<p><strong>Путь:</strong> <code>Администрирование</code> → <code>Настройка пользователей и прав</code> → <code>Ограничение доступа на уровне записей</code> → <code>Включить галочку</code>.</p>
+<h4 id="_1">Пример настройки для Мастера цеха:</h4>
+<ol>
+<li>Зайти в созданную группу <code>КБМ - Мастер цеха</code>.</li>
+<li>Перейти на вкладку <code>Ограничения доступа</code>.</li>
+<li>Нажать <code>Добавить</code> → Выбрать объект ограничения: <code>Рабочий центр</code> или <code>Подразделение</code> (в зависимости от того, как привязаны наряды).</li>
+<li>Условие: <code>Подразделение</code> = <code>Токарный цех</code>.</li>
+<li>Сохранить.</li>
+</ol>
+<blockquote>
+<p>✅ <strong>Результат:</strong> Пользователь из этой группы увидит в списках только документы, относящиеся к Токарному цеху.</p>
+</blockquote>
+<hr />
+<h2 id="5-3">5. 👤 Этап 3: Создание пользователей</h2>
+<blockquote>
+<p>⚠️ <strong>ВНИМАНИЕ:</strong> Перед созданием пользователя в системе <strong>должна быть создана карточка Сотрудника</strong>!</p>
+</blockquote>
+<h3 id="51-1">5.1. Шаг 1: Заведение сотрудника</h3>
+<p><strong>Путь:</strong> <code>Люди</code> → <code>Сотрудники</code> → <code>Создать</code>.
+Заполнить ФИО, Должность, Подразделение. Сохранить.</p>
+<h3 id="52-2">5.2. Шаг 2: Создание учетной записи</h3>
+<p><strong>Путь:</strong> <code>Администрирование</code> → <code>Настройка пользователей и прав</code> → <code>Пользователи</code> → <code>Создать</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Поле</th>
+<th style="text-align: left;">Значение</th>
+<th style="text-align: left;">Рекомендация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Имя</strong></td>
+<td style="text-align: left;"><code>ivanov_ii</code></td>
+<td style="text-align: left;">Латиницей, без пробелов</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Полное имя</strong></td>
+<td style="text-align: left;"><code>Иванов Иван Иванович</code></td>
+<td style="text-align: left;">Для отображения в журналах</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сотрудник</strong></td>
+<td style="text-align: left;"><code>Иванов И.И.</code></td>
+<td style="text-align: left;">Связь с карточкой из п. 5.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Аутентификация</strong></td>
+<td style="text-align: left;"><code>1С:Предприятие</code></td>
+<td style="text-align: left;">Стандартный вариант</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Пароль</strong></td>
+<td style="text-align: left;"><code>TempPass123!</code></td>
+<td style="text-align: left;">Установить сложный временный пароль</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Группа доступа</strong></td>
+<td style="text-align: left;"><code>КБМ - Мастер цеха</code></td>
+<td style="text-align: left;">Выбрать профиль из Этапа 2</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔐 <strong>Политика безопасности:</strong>
+В разделе <code>Администрирование</code> → <code>Настройки пользователей и прав</code> → <code>Парольная политика</code>:
+*   ✅ Требовать сложность пароля.
+*   ✅ Требовать смену пароля при первом входе.
+*   ✅ Блокировать после 5 неудачных попыток.</p>
+</blockquote>
+<h3 id="53">5.3. Реестр пользователей (Шаблон)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ФИО</th>
+<th style="text-align: left;">Должность</th>
+<th style="text-align: left;">Логин</th>
+<th style="text-align: left;">Группа доступа</th>
+<th style="text-align: left;">Ограничение (RLS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Петров П.П.</td>
+<td style="text-align: left;">Менеджер</td>
+<td style="text-align: left;"><code>petrov_pp</code></td>
+<td style="text-align: left;">КБМ - Менеджер по продажам</td>
+<td style="text-align: left;">Свои клиенты</td>
+</tr>
+<tr>
+<td style="text-align: left;">Иванов И.И.</td>
+<td style="text-align: left;">Мастер</td>
+<td style="text-align: left;"><code>ivanov_ii</code></td>
+<td style="text-align: left;">КБМ - Мастер цеха</td>
+<td style="text-align: left;">Цех №1 (Токарный)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Сидоров С.С.</td>
+<td style="text-align: left;">Мастер</td>
+<td style="text-align: left;"><code>sidorov_ss</code></td>
+<td style="text-align: left;">КБМ - Мастер цеха</td>
+<td style="text-align: left;">Цех №2 (Сборочный)</td>
+</tr>
+<tr>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-4">6. 🧪 Этап 4: Тестирование и приемка</h2>
+<p>Не переходите к вводу остатков, пока не пройдете этот этап!</p>
+<h3 id="61-">6.1. Чек-лист проверки</h3>
+<ol>
+<li>[ ] <strong>Вход в систему:</strong> Попробовать войти под каждым новым пользователем.</li>
+<li>[ ] <strong>Смена пароля:</strong> Убедиться, что система требует сменить временный пароль.</li>
+<li>[ ] <strong>Проверка видимости:</strong><ul>
+<li>Зайти под <strong>Мастером цеха №1</strong>. Убедиться, что он <strong>НЕ видит</strong> наряды цеха №2.</li>
+<li>Зайти под <strong>Менеджером</strong>. Убедиться, что он <strong>НЕ видит</strong> цены закупки в документах (если настроено).</li>
+<li>Зайти под <strong>Экономистом</strong>. Убедиться, что он может сформировать отчет «Себестоимость», но не может провести «Заказ поставщику».</li>
+</ul>
+</li>
+<li>[ ] <strong>Создание документа:</strong> Каждый пользователь должен создать один тестовый документ своего типа (черновик) и убедиться, что кнопка «Провести» активна (или неактивна, если запрещено).</li>
+</ol>
+<blockquote>
+<p>🛑 <strong>СТОП-ФАКТОР:</strong> Если мастер цеха видит лишнее — вернуться в п. 4.3 и проверить настройки RLS.</p>
+</blockquote>
+<hr />
+<h2 id="7-5-1-30">7. 🔗 Этап 5: Синхронизация с 1С:Бухгалтерией (3.0)</h2>
+<p>Если бухгалтерский учет ведется в отдельной базе 1С:Бухгалтерия.</p>
+<p><strong>Путь:</strong> <code>Администрирование</code> → <code>Синхронизация данных</code></p>
+<ol>
+<li>Нажать <code>Настроить синхронизацию данных</code>.</li>
+<li>Выбрать тип: <code>1С:Бухгалтерия предприятия 3.0</code>.</li>
+<li>Выбрать способ подключения:<ul>
+<li>🌐 <strong>Прямое подключение:</strong> Если базы в одной локальной сети (рекомендуется для скорости).</li>
+<li>💾 <strong>Через файлы:</strong> Если базы на разных компьютерах без сети.</li>
+</ul>
+</li>
+<li><strong>Настройка правил обмена:</strong><ul>
+<li>✅ Номенклатура, Контрагенты, Договоры (двусторонний обмен).</li>
+<li>✅ Документы реализации и поступления (для отражения в бухучете).</li>
+<li>⬜ Зарплата (обычно выгружается отдельно в специализированные конфигураторы, уточнить у бухгалтера).</li>
+</ul>
+</li>
+<li>Выполнить <strong>первичную выгрузку</strong>.</li>
+</ol>
+<hr />
+<h2 id="8">8. ✅ Итоговый контрольный лист</h2>
+<p>Перед передачей системы в эксплуатацию убедитесь:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">№</th>
+<th style="text-align: left;">Действие</th>
+<th style="text-align: center;">Статус</th>
+<th style="text-align: left;">Ответственный</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Функциональные опции включены</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Администратор</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Склады и статьи затрат созданы</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Администратор</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Группы доступа настроены (включая RLS)</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Администратор</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Карточки сотрудников заведены</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Кадровик/Админ</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Пользователи созданы, пароли выданы</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Администратор</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Тестовый вход выполнен успешно</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Все пользователи</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Синхронизация с Бухгалтерией настроена</td>
+<td style="text-align: center;">⬜</td>
+<td style="text-align: left;">Администратор</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Документ разработан для внутреннего использования ООО «КБМ». Копирование без согласования запрещено.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

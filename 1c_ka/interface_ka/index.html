@@ -1,0 +1,2638 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Сравнительный анализ УНФ и КА">
+      
+      
+      
+        <link rel="canonical" href="https://andrzejabramov.github.io/integration_1c_unf/1c_ka/interface_ka/">
+      
+      
+        <link rel="prev" href="../../1c_unf/interface_unf/">
+      
+      
+        <link rel="next" href="../../1c_algoritm/01_settings_algoritm/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Интерфейс - 1С: Внедрение — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-header__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            1С: Внедрение — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Интерфейс
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resume/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📋 Выводы
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_unf/interface_unf/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:УНФ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  📘 1С:КА
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_algoritm/01_settings_algoritm/" class="md-tabs__link">
+          
+  
+  
+  📁 Алгоритмы (общие)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-nav__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    1С: Внедрение — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Выводы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:УНФ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:УНФ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_unf/interface_unf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:КА
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:КА
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏭 Производственное предприятие
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Как пользоваться документом
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Важное отличие КА от УНФ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Отдел продаж (Менеджеры по продажам)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Главный инженер
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ 📊 Инженер ПДО (Планово-диспетчерский отдел)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ ️ Технолог
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ Конструктор
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6️⃣ Снабженец (Отдел закупок)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7️⃣ Кладовщик (Материалы и НЗП)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8️⃣ Начальник производства (Мастер цеха)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9️⃣ Кладовщик (Готовая продукция)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔟 ✅ Инженер ОТК
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣1️⃣ Отдел реализации (Склад ГП + Отгрузка)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 1С:Комплексная автоматизация (КА) — Экономист
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 1С:Комплексная автоматизация (КА) — Экономист">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Дополнительные объекты (регламентированный учет)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Ключевые отличия: Экономист в УНФ vs КА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Рекомендации для экономиста
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Рекомендации для экономиста">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Универсальные правила:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Важные моменты в КА:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Частые ошибки:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣2️⃣ 👔 Руководитель
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Ключевые отличия КА от УНФ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔑 Ключевые отличия КА от УНФ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Разделы интерфейса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Основные документы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Ключевые рекомендации
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Ключевые рекомендации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Для всех сотрудников:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Важные моменты:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Если вы переходите с УНФ на КА
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📁 Алгоритмы (общие)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📁 Алгоритмы (общие)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/01_settings_algoritm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/02_initial_balances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начальные остатки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/03_sales_department/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отдел продаж
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/04_purchases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закупки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/05_warehouse_materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Склад (материалы)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/06_production_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Производство
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/07_otk_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ОТК
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/08_salary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Зарплата
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/09_sales_shipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отгрузка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/10_cost_calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Себестоимость
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/11_month_closing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закрытие месяца
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/12_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/13_reports_catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_algoritm/14_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏭 Производственное предприятие
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Как пользоваться документом
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Важное отличие КА от УНФ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Отдел продаж (Менеджеры по продажам)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Главный инженер
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ 📊 Инженер ПДО (Планово-диспетчерский отдел)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ ️ Технолог
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ Конструктор
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6️⃣ Снабженец (Отдел закупок)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7️⃣ Кладовщик (Материалы и НЗП)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8️⃣ Начальник производства (Мастер цеха)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9️⃣ Кладовщик (Готовая продукция)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔟 ✅ Инженер ОТК
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣1️⃣ Отдел реализации (Склад ГП + Отгрузка)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 1С:Комплексная автоматизация (КА) — Экономист
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 1С:Комплексная автоматизация (КА) — Экономист">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Дополнительные объекты (регламентированный учет)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Ключевые отличия: Экономист в УНФ vs КА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Рекомендации для экономиста
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Рекомендации для экономиста">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Универсальные правила:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Важные моменты в КА:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Частые ошибки:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣2️⃣ 👔 Руководитель
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Ключевые отличия КА от УНФ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔑 Ключевые отличия КА от УНФ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Разделы интерфейса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Основные документы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Ключевые рекомендации
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Ключевые рекомендации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Для всех сотрудников:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Важные моменты:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Если вы переходите с УНФ на КА
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1">📋 Документация: Интерфейсы и объекты учета в 1С:Комплексная автоматизация (КА)</h1>
+<h2 id="_1">🏭 Производственное предприятие</h2>
+<hr />
+<h2 id="_2">📌 Как пользоваться документом</h2>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📘 <strong>Справочник</strong></td>
+<td>Базы данных (контрагенты, товары и т.д.)</td>
+</tr>
+<tr>
+<td>📄 <strong>Документ</strong></td>
+<td>Операции, которые вы создаете</td>
+</tr>
+<tr>
+<td>📊 <strong>Отчет</strong></td>
+<td>Аналитика и сводные данные</td>
+</tr>
+<tr>
+<td>⚙️ <strong>Настройки</strong></td>
+<td>Конфигурация системы</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">⚠️ Важное отличие КА от УНФ</h2>
+<blockquote>
+<p>💡 <strong>КА построена на принципе разделения учета:</strong>
+- 📊 <strong>Управленческий учет</strong> — для внутреннего использования
+- 📑 <strong>Регламентированный учет</strong> — для бухгалтерии и налоговой</p>
+<p>Для многих операций существуют <strong>два документа</strong> — для управленческого и для бухгалтерского учета!</p>
+</blockquote>
+<hr />
+<h2 id="1_1">1️⃣  Отдел продаж (Менеджеры по продажам)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/1_1.png"><strong>Контрагенты</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Партнеры</code></td>
+<td>✅ <strong>Юр. лицо</strong>, <strong>ИНН</strong>. ⚠️ <strong>Важно:</strong> заполнить категорию (Покупатель, Поставщик)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/1_2.png"><strong>Номенклатура</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Номенклатура</code></td>
+<td>📦 <strong>Вид номенклатуры:</strong> "Товар", "Услуга". Заполнять единицы измерения, <strong>ставки НДС</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/1_3.png"><strong>Заказ клиента</strong></a></td>
+<td><code>Продажи</code> → <code>Заказы клиентов</code></td>
+<td>🎯 <strong>Основа для работы!</strong> Статусы: "Согласование", "К отгрузке", "Закрыт"</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/1_4.png"><strong>Документы продажи (все)</strong></a></td>
+<td><code>Продажи</code> → <code>Реализация товаров и услуг</code></td>
+<td>📦 Оформляется на складе ГП. <strong>Проводки</strong> по управленческому и регламентированному учету</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2️⃣  Главный инженер</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/2_1.png"><strong>Основные средства</strong></a></td>
+<td><code>Внеоборотные активы</code> → <code>Основные средства</code> → <code>Документы по ОС</code></td>
+<td>🏭 Оборудование, транспорт, здания. ⚠️ <strong>В КА учет ОС ведется параллельно с регламентированным учетом</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/2_2.png"><strong>Виды работ</strong></a></td>
+<td><code>Производство</code> → <code>Трудозатраты</code> → <code>Виды работ</code></td>
+<td>🔨 Список технологических операций с указанием <strong>расценок и трудозатрат</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/2_3.png"><strong>Плановые ремонты (График ППР)</strong></a></td>
+<td><code>Производство</code> → <code>Настройки и справочники по производству</code> → <code>Графики работы</code></td>
+<td>📅 <strong>Планирование ТО и ремонтов</strong> оборудования</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/2_4.png"><strong>Заказ-наряд на ремонт</strong></a></td>
+<td><code>Производство</code> →  <code>Заказы перерабочикам</code></td>
+<td>🔧 Учет <strong>фактических затрат</strong> на ремонт (запчасти, время)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-">3️⃣ 📊 Инженер ПДО (Планово-диспетчерский отдел)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/3_1.png"><strong>Ресурсные спецификации</strong></a></td>
+<td><code>Производство</code> → <code>Ресурсные Спецификации</code></td>
+<td>🧩 <strong>Конструкторский и технологический состав</strong>. Тип: "Сборочная единица"</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/3_2.png"><strong>Статьи калькуляции</strong></a></td>
+<td><code>Производство</code> → <code>Статьи калькуляции</code></td>
+<td>⏱️ Последовательность операций, <strong>нормы времени</strong>, рабочие центры</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/2_4.png"><strong>Заказы переработчикам</strong></a></td>
+<td><code>Производство</code> → <code>Заказы пеереработчикам</code></td>
+<td>🚀 <strong>Запуск изделия</strong>. Заполнять: номенклатура, количество, плановая дата, спецификация</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/3_4.png"><strong>Настройки и справочники по производству -&gt; Графики работы</strong></a></td>
+<td><code>Производство</code> →  <code>Настройки и справочники по производству</code> → <code>Графики работы</code></td>
+<td>📅 <strong>Распределение заказов</strong> по сменам и рабочим центрам</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4️⃣ ️ Технолог</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/4_1.png"><strong>Номенклатура</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Номенклатура</code></td>
+<td>🏭 Создание карточек ГП и полуфабрикатов. <strong>Тип: "Товар"</strong>, вид: "Продукция"</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/3_1.png"><strong>Спецификации номенклатуры</strong></a></td>
+<td><code>Производство</code> → <code>Ресурсные Спецификации</code></td>
+<td>📦 Материальный состав (что входит). ⚠️ <strong>В КА есть понятие "Спецификация-этап"</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/4_3.png"><strong>Технологические карты</strong></a></td>
+<td><code>Оформляется через номенклатуру и специфкации</code></td>
+<td>🛠️ <strong>Детальное описание операций</strong> с привязкой к рабочим центрам и инструменту</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/4_4.png"><strong>Этапы производства</strong></a></td>
+<td><code>Производство</code> → <code>Этапы производства</code></td>
+<td>🔄 Используется для <strong>маршрутного учета</strong> при длительном цикле</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5️⃣  Конструктор</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/4_1.png"><strong>Номенклатура</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Номенклатура</code></td>
+<td>📝 Создание позиций деталей, сборочных единиц</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/3_1.png"><strong>Спецификации номенклатуры</strong></a></td>
+<td><code>Производство</code> → <code>Ресурсные Спецификации</code></td>
+<td>🏗️ <strong>Конструкторский состав</strong> (вложенность до <strong>5-10 уровней</strong>)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/5_3.png"><strong>Характеристики номенклатуры</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Номенклатура</code> (характеристики)</td>
+<td>📏 Размеры, цвета, параметры (если требуется)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📎</td>
+<td><a href="../../img/ka/5_4.png"><strong>Вложения в файлы</strong></a></td>
+<td>Кнопка <strong>"📎 Скрепка"</strong> в карточке номенклатуры</td>
+<td>📁 Прикрепление <strong>чертежей, 3D-моделей, ТУ</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6️⃣  Снабженец (Отдел закупок)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/1_1.png"><strong>Контрагенты (Поставщики)</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Партнеры</code></td>
+<td>🤝 Категория <strong>"Поставщик"</strong>, договоры, <strong>условия оплаты</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/6_2.png"><strong>Заказ поставщику</strong></a></td>
+<td><code>Закупки</code> → <code>Заказы поставщикам</code></td>
+<td>📋 Формируется на основании <strong>потребности</strong> (по дефициту или заказу клиента)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/6_3.png"><strong>Поступление товаров и услуг</strong></a></td>
+<td><code>Закупки</code> → <code>Документы закупки (все)</code></td>
+<td>📥 <strong>Оприходование ТМЦ</strong> на склад. ⚠️ <strong>В КА два вида:</strong> управленческое и регламентированное поступление</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/6_4.png"><strong>Потребности в закупках</strong></a></td>
+<td><code>Закупки</code> → <code>Состояние обеспечения заказов</code></td>
+<td>🔍 <strong>Анализ</strong> того, что нужно закупить для обеспечения производства и заказов</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7️⃣  Кладовщик (Материалы и НЗП)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/7_1.png"><strong>Склады (и ячейки)</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Склады</code></td>
+<td>🏢 Типы складов: <strong>"Материальный"</strong>, <strong>"Производственный (НЗП)"</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/7_2.png"><strong>Оприходование товаров</strong></a></td>
+<td><code>Склад и доставка</code> → <code>Поступления товаров</code> (или Акт оприходования)</td>
+<td>✅ Приемка материалов от поставщика</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/7_3.png"><strong>Перемещение товаров</strong></a></td>
+<td><code>Склад и доставка</code> → <code>Перемещения товаров</code></td>
+<td>🚚 <strong>Выдача материалов в цех</strong> (со склада материалов на склад НЗП)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/7_4.png"><strong>Инвентаризация товаров</strong></a></td>
+<td><code>Склад и доставка</code> → <code>Пересчеты товаров</code></td>
+<td>🔢 <strong>Сверка фактических остатков</strong> материалов с учетными</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/7_5.png"><strong>Остатки товаров</strong></a></td>
+<td><code>Склад и достпвка</code> → <code>Отчеты по складу</code> → <code>Остатки и доступность товаров</code></td>
+<td>📋 <strong>Ведомость по складам</strong> материалов</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8️⃣  Начальник производства (Мастер цеха)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/8_1.png"><strong>Рабочие центры</strong></a></td>
+<td><code>Производство</code> → <code>Настройки и справочники по производству</code> → <code>Производственные подразделения</code></td>
+<td>🔧 Станки, участки (Фрезерный, Сварочный)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/8_2.png"><strong>Производственный заказ</strong></a></td>
+<td><code>Производство</code> → <code>Заказы переработчикам</code></td>
+<td>🎯 <strong>Задание для цеха</strong>. ⚠️ <strong>В КА это основной документ для планирования!</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/8_3.png"><strong>Отчет производства за смену</strong></a></td>
+<td><code>Производство</code> → <code>Отчеты по производству</code></td>
+<td>✅ <strong>Фиксация выработки</strong>, брака, времени работы сотрудников и оборудования</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/8_4.png"><strong>Требование-накладная</strong></a></td>
+<td><code>Производство</code> → <code>Передача в производство</code></td>
+<td>📤 <strong>Списание материалов в НЗП</strong> (на основании спецификации)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9">9️⃣  Кладовщик (Готовая продукция)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/7_1.png"><strong>Склады (ГП)</strong></a></td>
+<td><code>Склад и доставка</code> → <code>Приемка</code></td>
+<td>📦 Тип склада: <strong>"Готовая продукция"</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/9_2.png"><strong>Выпуск продукции</strong></a></td>
+<td><code>Производство</code> → <code>Документы производства (все)</code></td>
+<td>📥 <strong>Оприходование ГП из цеха</strong> на склад. Основание — Отчет производства за смену</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/9_3.png"><strong>Реализация товаров и услуг</strong></a></td>
+<td><code>Продажи</code> → <code>Документы продажи (все)</code></td>
+<td>🚚 Отгрузка со склада ГП клиенту</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/9_4.png"><strong>Комплектация (Сборка)</strong></a></td>
+<td><code>Склад и достпвка</code> → <code>Создать</code>  → <code>Заказ на сборку (разборку)</code></td>
+<td>📦 Сборка комплектов, упаковка, <strong>разукомплектация</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/9_5.png"><strong>Ведомость по товарам на складах</strong></a></td>
+<td><code>Склад и доствка</code> → <code>Отчеты по складу</code> → <code>Ведомость по товарам на складах</code></td>
+<td>📈 <strong>Анализ остатков ГП</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">🔟 ✅ Инженер ОТК</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/10_1.png"><strong>Отчет производства за смену</strong></a></td>
+<td><code>Производство</code> → <code>Отчеты по производству</code></td>
+<td>⚠️ В документе заполняется колонка <strong>"Брак"</strong>, указывается <strong>код брака</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../img/ka/10_2.png"><strong>Акт о браке</strong></a></td>
+<td><code>Производство</code> → <code>Акты о браке</code></td>
+<td>❌ Оформление исправимого/неисправимого брака. Заполняется <strong>виновник</strong>, статья затрат</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../img/ka/10_3.png"><strong>Приемка товаров и услуг (Качество)</strong></a></td>
+<td><code>Закупки</code> → <code>Поступление товаров</code> (кнопка <strong>"Приемка"</strong>)</td>
+<td>↩️ Оформление <strong>возврата поставщику</strong> при входном контроле</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/10_4.png"><strong>Сертификаты качества</strong></a></td>
+<td><code>Зависит от места обнаружения (производство, склад, покупатель) и типа брака (исправимый/неисправимый)</code></td>
+<td>📄 <strong>Привязка сертификатов</strong> к партиям товара</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11">1️⃣1️⃣  Отдел реализации (Склад ГП + Отгрузка)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/11_1.png"><strong>Заказ клиента</strong></a></td>
+<td><code>Продажи</code> → <code>Заказы клиентов</code></td>
+<td>🔒 <strong>Резервирование ГП</strong> на складе под конкретный заказ</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/11_2.png"><strong>Счет на оплату покупателю</strong></a></td>
+<td><code>Продажи</code> → <code>Счет на оплату покупателю</code></td>
+<td>💰 Выставляется клиенту</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../img/ka/11_3.png"><strong>Реализация товаров и услуг</strong></a></td>
+<td><code>Продажи</code> → <code>Документы продажи (все)</code></td>
+<td>📤 Оформление отгрузки, печать <strong>ТОРГ-12</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/11_4.png"><strong>Заказы клиентов к отгрузке</strong></a></td>
+<td><code>Продажи</code> → <code>Электронные перевозочные документы</code></td>
+<td>📋 <strong>Список заказов</strong>, ожидающих отгрузки</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1_2">📘 1С:Комплексная автоматизация (КА) — Экономист</h2>
+<blockquote>
+<p>💡 <strong>В КА функционал экономиста значительно шире</strong> за счет разделения управленческого и регламентированного учета, наличия полноценного блока бюджетирования и более развитого учета затрат.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/13_1.png"><strong>Статьи затрат</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Доходы и расходы, финансовый результат</code></td>
+<td>📋 Управленческие статьи. ⚠️ <strong>Есть иерархия и правила распределения</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/13_2.png"><strong>Статьи движения ДС</strong></a></td>
+<td><code>Казначейство</code> → <code>Отчеты по казначейству</code> → <code>Движение денежных средств</code></td>
+<td>💰 <strong>Ключевой справочник</strong> для Платежного календаря и анализа ДДС</td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/13_3.png"><strong>Номенклатурные группы</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Номенклатура</code></td>
+<td>📦 Для аналитики <strong>рентабельности по группам продукции</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/13_4.png"><strong>Подразделения (ЦФО)</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Структура предприятия</code></td>
+<td>🎯 В КА подразделения могут быть <strong>Центрами финансовой ответственности</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📘</td>
+<td><a href="../../img/ka/13_5.png"><strong>Проекты</strong></a></td>
+<td><code>НСИ и Администрирование</code> → <code>НСИ</code> → <code>Проекты</code></td>
+<td>📁 Дополнительный разрез аналитики (заказы, гранты, направления)</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_6.png"><strong>Заявка на расходование ДС</strong></a></td>
+<td><code>Казначейство</code> → <code>Заявки на расходование ДС</code></td>
+<td>📝 Внутренний документ-основание. ⚠️ <strong>Утверждается экономистом/финдиректором</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_7.png"><strong>Платежный календарь</strong></a></td>
+<td><code>Казначейство</code> → <code>Платежный календарь</code></td>
+<td>📅 Планирование платежей с учетом <strong>лимитов и приоритетности</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_8.png"><strong>Платежное поручение</strong></a></td>
+<td><code>Казначейство</code> → <code>Распоряженние на перемещение денежных средств</code></td>
+<td>📤 Создаются на основании <strong>утвержденных заявок</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_9.png"><strong>Выписка банка (загрузка)</strong></a></td>
+<td><code>Казначейство</code> → <code>Банк</code> → <code>Безналичные платежи</code></td>
+<td>🏦 Загрузка фактических движений ДС, <strong>автоматическое отражение</strong> в учете</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_1.png"><strong>Распределение доходов и расходов</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Доходы и расходы, финансовый результат</code></td>
+<td>🔄 <strong>Закрытие месяца</strong>, распределение накладных расходов по ЦФО, проектам</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/12_4.png"><strong>Расчет себестоимости</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Отчеты по финансовому результату</code> → <code>Закрытие месяца</code> → <code>Сверка остатков оперативного учета и себестоимости</code></td>
+<td>⚙️ <strong>Регламентная операция</strong> для расчета фактической себестоимости выпуска</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_12.png"><strong>Корректировка долга</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Учет доходов и расходов</code> → <code>Начисление и списание резервов по сомнительным долгам</code></td>
+<td>⚖️ Для списания задолженности, взаимозачетов</td>
+</tr>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><a href="../../img/ka/13_13.png"><strong>Бюджет (Сценарий)</strong></a></td>
+<td><code>Бюджетирование и планирование</code> → <code>Бюджеты</code> → <code>Экземпляры бюджетов</code></td>
+<td>📊 Плановые показатели по доходам, расходам, ДДС, балансу. <strong>Поддержка сценариев: План, Факт, Прогноз</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">⚙️</td>
+<td><a href="../../img/ka/13_14.png"><strong>Бюджетное правило</strong></a></td>
+<td><code>Бюджетирование и планирование</code> → <code>Настройки и справочники по бюджетированию и планированию</code></td>
+<td>🤖 Правила <strong>автоматического расчета</strong> бюджетов на основе данных прошлых периодов</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/13_15.png"><strong>Финансовый результат (упр.)</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Отчеты по финансовому результату</code></td>
+<td>🎯 Анализ прибыли и рентабельности в разрезе групп, ЦФО, проектов</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/13_16.png"><strong>ОСВ (управленческая)</strong></a></td>
+<td><code>Казначейство</code> → <code>Отчеты по казначейству</code></td>
+<td>📈 Управленческие обороты по счетам</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/12_3.png"><strong>Задолженность контрагентов</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Управленческий баланс</code> → <code>Статьи активов и пассивов</code> → <code>Дебиторская задолженность</code></td>
+<td>⚠️ Дебиторка и кредиторка в <strong>управленческом учете</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/13_18.png"><strong>Отчет о движении ДС</strong></a></td>
+<td><code>Регламентированный учет</code> → <code>Стандартные бухгалтерские отчеты</code> → <code>Оборотно-сальдовая ведомость</code></td>
+<td>💵 <strong>План-фактный анализ</strong> платежей по статьям ДС</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">➕ Дополнительные объекты (регламентированный учет)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📄</td>
+<td><strong>Операция (бухгалтерская)</strong></td>
+<td><code>Регламентированный учет</code> → <code>Операции</code></td>
+<td>✍️ Для корректировок, не проходящих через стандартные документы</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><strong>Бухгалтерский баланс (ф. №1)</strong></td>
+<td><code>Регламентированный учет</code> → <code>Отчеты</code> → <code>Бухгалтерский баланс</code></td>
+<td>📑 <strong>Регламентированная отчетность</strong> для налоговой</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><strong>ОСВ (регламентированный учет)</strong></td>
+<td><code>Регламентированный учет</code> → <code>Отчеты</code> → <code>ОСВ</code></td>
+<td>🔍 Для сверки с налоговой инспекцией и аудита</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="vs">🔑 Ключевые отличия: Экономист в УНФ vs КА</h2>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>📘 1С:УНФ</th>
+<th>📘 1С:Комплексная автоматизация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Учет</strong></td>
+<td>Преимущественно управленческий. Регламентированный — упрощенный</td>
+<td>✅ <strong>Полноценное разделение</strong>: управленческий + регламентированный в единой базе</td>
+</tr>
+<tr>
+<td><strong>Бюджетирование</strong></td>
+<td>Базовое, ограниченное количество сценариев</td>
+<td>🚀 <strong>Развитое</strong>: множественные сценарии, бюджетные правила, консолидация, план-факт</td>
+</tr>
+<tr>
+<td><strong>Казначейство</strong></td>
+<td>Заявки, платежный календарь, лимиты</td>
+<td>🏦 <strong>Полноценный блок "Казначейство"</strong>: маршрутизация заявок, лимитирование, интеграция с банками</td>
+</tr>
+<tr>
+<td><strong>Себестоимость</strong></td>
+<td>Калькуляция, распределение накладных расходов</td>
+<td>🧮 <strong>Сложный алгоритм</strong>: попередельный метод, РАУЗ, расширенная аналитика затрат</td>
+</tr>
+<tr>
+<td><strong>Закрытие месяца</strong></td>
+<td>Упрощенная процедура</td>
+<td>⚙️ <strong>Регламентная процедура</strong> с четкой последовательностью шагов</td>
+</tr>
+<tr>
+<td><strong>Регламентированная отчетность</strong></td>
+<td>Не является основной целью</td>
+<td>📑 <strong>Полный набор</strong> отчетов для ФНС, ПФР, ФСС, Росстата</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">🎯 Рекомендации для экономиста</h2>
+<h3 id="_7">✅ Универсальные правила:</h3>
+<ul>
+<li>🔍 <strong>Проверяйте аналитику</strong> при вводе документов (ЦФО, проекты, номенклатурные группы)</li>
+<li>💾 <strong>Регулярно проводите закрытие месяца</strong> для корректного расчета себестоимости</li>
+<li>📊 <strong>Используйте план-фактный анализ</strong> для контроля отклонений</li>
+<li>🤝 <strong>Согласовывайте заявки на ДС</strong> с руководителями подразделений</li>
+</ul>
+<h3 id="_8">🔥 Важные моменты в КА:</h3>
+<ol>
+<li><strong>Разделяйте управленческий и регламентированный учет</strong> — не путайте документы!</li>
+<li><strong>Используйте ЦФО</strong> для детализации ответственности по затратам</li>
+<li><strong>Настраивайте бюджетные правила</strong> — это экономит время при планировании</li>
+<li><strong>Мониторьте лимиты</strong> в Платежном календаре для предотвращения кассовых разрывов</li>
+</ol>
+<h3 id="_9">⚠️ Частые ошибки:</h3>
+<table>
+<thead>
+<tr>
+<th>Ошибка</th>
+<th>Последствие</th>
+<th>Как избежать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Не заполнены аналитики в статьях затрат</td>
+<td>Некорректная себестоимость</td>
+<td>✅ Проверять обязательные разрезы аналитики</td>
+</tr>
+<tr>
+<td>❌ Пропущено распределение накладных расходов</td>
+<td>Заниженная/завышенная прибыль</td>
+<td>✅ Запускать регламентные операции закрытия месяца</td>
+</tr>
+<tr>
+<td>❌ Не утверждены заявки на ДС</td>
+<td>Блокировка платежей в календаре</td>
+<td>✅ Своевременно согласовывать заявки</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12">1️⃣2️⃣ 👔 Руководитель</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Тип</th>
+<th>Название объекта</th>
+<th>Путь в интерфейсе</th>
+<th>💡 Основные поля / Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/12_1.png"><strong>Монитор основных показателей</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Монитор основных показателей</code></td>
+<td>🎯 <strong>Главный инструмент руководителя!</strong> Показывает: <strong>выручка</strong>, остатки ДС, дебиторка, кредиторка, себестоимость</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/12_2.png"><strong>Финансовый результат</strong></a></td>
+<td><code>НСИ и администрирование</code> → <code>Финансовый результат и контроллинг</code> → <code>Финансовый результат</code></td>
+<td>💵 <strong>Анализ прибыльности</strong> бизнеса в разрезе заказов, клиентов, менеджеров</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/12_3.png"><strong>Задолженность контрагентов</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Управленческий баланс</code> → <code>Статьи активов и пассивов</code> → <code>Дебиторская задолженность</code></td>
+<td>⚠️ <strong>Управленческая</strong> дебиторская/кредиторская задолженность</td>
+</tr>
+<tr>
+<td style="text-align: center;">📊</td>
+<td><a href="../../img/ka/12_4.png"><strong>Себестоимость продукции</strong></a></td>
+<td><code>Финансовый результат и контроллинг</code> → <code>Отчеты по финансовому результату</code> → <code>Закрытие месяца</code> → <code>Сверка остатков оперативного учета и себестоимости</code></td>
+<td>📈 <strong>Контроль затрат</strong> на материалы и работу</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">🔑 Ключевые отличия КА от УНФ</h2>
+<h3 id="_11">📂 Разделы интерфейса</h3>
+<table>
+<thead>
+<tr>
+<th>УНФ</th>
+<th>КА</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Продажи и Сервис"</td>
+<td><strong>"Продажи"</strong></td>
+</tr>
+<tr>
+<td>"Закупки и Склад"</td>
+<td><strong>"Закупки"</strong>, <strong>"Склад"</strong> (разделены)</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>"Производство"</strong>, <strong>"Финансы"</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">🎯 Основные документы</h3>
+<table>
+<thead>
+<tr>
+<th>Особенность</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Производственные заказы</strong></td>
+<td>⚠️ <strong>В КА строго разделены:</strong> "Заказ клиента" (работа с клиентом) и "Производственный заказ" (работа цеха). Это <strong>связующее звено</strong> между продажами и цехом!</td>
+</tr>
+<tr>
+<td>📋 <strong>Технологические карты</strong></td>
+<td>В КА технологические карты (маршрутные листы) <strong>вынесены в отдельный справочник</strong>, более развита маршрутная технология</td>
+</tr>
+<tr>
+<td>👔 <strong>Монитор руководителя</strong></td>
+<td>В КА есть <strong>отдельный раздел "Руководителю"</strong> с предустановленным "Монитором основных показателей" — очень удобно для первого лица!</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_13">🎯 Ключевые рекомендации</h2>
+<h3 id="_14">✅ Для всех сотрудников:</h3>
+<ul>
+<li>💾 <strong>Регулярно сохраняйте</strong> документы</li>
+<li>🔍 <strong>Проверяйте заполнение</strong> обязательных полей (помечены ⚠️)</li>
+<li>📊 <strong>Понимайте разницу</strong> между управленческим и регламентированным учетом</li>
+<li>💬 <strong>Связывайтесь с коллегами</strong> при возникновении вопросов</li>
+</ul>
+<h3 id="_15">🔥 Важные моменты:</h3>
+<ol>
+<li><strong>Производственный заказ</strong> — 🎯 <strong>ключевой документ</strong> планирования в КА!</li>
+<li><strong>Заказ клиента</strong> — основа работы отдела продаж</li>
+<li><strong>Технологические карты</strong> — сердце производственного планирования</li>
+<li><strong>Отчет производства за смену</strong> — главный документ учета выработки</li>
+<li><strong>Монитор основных показателей</strong> — 📊 <strong>панель управления</strong> для руководителя</li>
+</ol>
+<hr />
+<blockquote>
+<p>💡 <strong>Совет:</strong> В КА используйте раздел <strong>«Руководителю» → «Монитор основных показателей»</strong> для оперативного контроля финансовых метрик — это сэкономит время на формирование отчетов вручную!</p>
+</blockquote>
+<hr />
+<p><em>📝 Блок подготовлен для экономистов производственных предприятий. При настройке аналитики и статей затрат рекомендуем согласовать структуру с руководителем и бухгалтерией для единого подхода к учету!</em> 🚀</p>
+<h2 id="_16">💡 Если вы переходите с УНФ на КА</h2>
+<blockquote>
+<p>⚠️ <strong>Обратите особое внимание на "Производственные заказы"</strong> как на связующее звено между продажами и цехом — это <strong>ключевое отличие процессов планирования</strong> в КА!</p>
+</blockquote>
+<hr />
+<p><em>📝 Документ подготовлен для эффективной работы в 1С:Комплексная автоматизация. При возникновении вопросов обращайтесь к администратору системы!</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

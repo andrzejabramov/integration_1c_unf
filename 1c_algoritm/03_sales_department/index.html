@@ -1,0 +1,2037 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Сравнительный анализ УНФ и КА">
+      
+      
+      
+        <link rel="canonical" href="https://andrzejabramov.github.io/integration_1c_unf/1c_algoritm/03_sales_department/">
+      
+      
+        <link rel="prev" href="../02_initial_balances/">
+      
+      
+        <link rel="next" href="../04_purchases/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Отдел продаж - 1С: Внедрение — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-header__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            1С: Внедрение — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Отдел продаж
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resume/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📋 Выводы
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_unf/interface_unf/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:УНФ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1c_ka/interface_ka/" class="md-tabs__link">
+          
+  
+  
+  📘 1С:КА
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_settings_algoritm/" class="md-tabs__link">
+          
+  
+  
+  📁 Алгоритмы (общие)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="1С: Внедрение — Документация" class="md-nav__button md-logo" aria-label="1С: Внедрение — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    1С: Внедрение — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrzejabramov/integration_1c_unf" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Выводы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:УНФ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:УНФ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_unf/interface_unf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 1С:КА
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📘 1С:КА
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1c_ka/interface_ka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерфейс
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📁 Алгоритмы (общие)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📁 Алгоритмы (общие)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_settings_algoritm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_initial_balances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начальные остатки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отдел продаж
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отдел продаж
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 🎯 Цель и принципы работы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 🎯 Цель и принципы работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Ключевые принципы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 👥 Схема взаимодействия
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 👥 Схема взаимодействия">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Роли и задачи:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1-check-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🛠 Этап 1: Подготовка (Check-list перед стартом)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🛠 Этап 1: Подготовка (Check-list перед стартом)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Существует основание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Готова технологическая база
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. (Опционально) Проверены остатки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🚀 Этап 2: Создание заказа на производство
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🚀 Этап 2: Создание заказа на производство">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🅰️ Способ 1: На основании Заказа покупателя (Рекомендуемый)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🅱️ Способ 2: На основании Плана производства (На склад)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆎 Способ 3: Ручное создание (Инициативное)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 🔍 Детальный разбор вкладок документа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 🔍 Детальный разбор вкладок документа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Вкладка «Материалы»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Вкладка «Операции»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Вкладка «Дополнительно»
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ⚡ Что происходит после проведения?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 📊 Контроль исполнения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 📊 Контроль исполнения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Монитор заказов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Отчет «Выпуск продукции по заказам»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Отчет «Незавершенное производство (НЗП)»
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ⛔ Типичные ошибки и решения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. ✅ Чек-лист перед запуском в работу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. ➡️ Следующие шаги
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_purchases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закупки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_warehouse_materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Склад (материалы)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_production_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Производство
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_otk_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ОТК
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_salary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Зарплата
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_sales_shipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отгрузка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_cost_calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Себестоимость
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_month_closing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закрытие месяца
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_reports_catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 🎯 Цель и принципы работы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 🎯 Цель и принципы работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Ключевые принципы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 👥 Схема взаимодействия
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 👥 Схема взаимодействия">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Роли и задачи:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1-check-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🛠 Этап 1: Подготовка (Check-list перед стартом)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🛠 Этап 1: Подготовка (Check-list перед стартом)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Существует основание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Готова технологическая база
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. (Опционально) Проверены остатки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🚀 Этап 2: Создание заказа на производство
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🚀 Этап 2: Создание заказа на производство">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🅰️ Способ 1: На основании Заказа покупателя (Рекомендуемый)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🅱️ Способ 2: На основании Плана производства (На склад)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆎 Способ 3: Ручное создание (Инициативное)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 🔍 Детальный разбор вкладок документа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 🔍 Детальный разбор вкладок документа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Вкладка «Материалы»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Вкладка «Операции»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Вкладка «Дополнительно»
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ⚡ Что происходит после проведения?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 📊 Контроль исполнения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 📊 Контроль исполнения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Монитор заказов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Отчет «Выпуск продукции по заказам»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Отчет «Незавершенное производство (НЗП)»
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ⛔ Типичные ошибки и решения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. ✅ Чек-лист перед запуском в работу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. ➡️ Следующие шаги
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1">🏭 Инструкция: Управление заказами на производство в 1С</h1>
+<p><strong>ООО «КБМ» | Версия документа: 1.0 | Дата: 21.03.2026</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Ответственные</strong></th>
+<th style="text-align: left;">Отдел продаж, Инженер ПДО, Главный инженер</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Цель</strong></td>
+<td style="text-align: left;">Корректное создание заказа на производство на основе потребностей клиентов или плана склада.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ключевое правило</strong></td>
+<td style="text-align: left;">⛔ <strong>Нет заказа на производство = Нет списания материалов, нет зарплаты, нет себестоимости.</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Статус</strong></td>
+<td style="text-align: left;">✅ Готов к исполнению</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1_1">1. 🎯 Цель и принципы работы</h2>
+<p>Данный документ описывает процесс запуска производства в системе. Заказ на производство (Заказ) — это главный управляющий документ, который связывает продажи, снабжение и цеха.</p>
+<h3 id="_1">🔑 Ключевые принципы</h3>
+<ol>
+<li><strong>Производство под заказ:</strong> Создается строго на основании <strong>Заказа покупателя</strong> (результат тендера или прямой продажи).</li>
+<li><strong>Производство на склад:</strong> Создается на основании <strong>Плана производства</strong> (инициатива маркетологов/руководства для заполнения склада ходовой продукцией).</li>
+<li><strong>Единая точка истины:</strong> Все материалы, операции и сроки фиксируются в этом документе. Любые изменения в ходе работы отслеживаются через него.</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Контекст для КБМ:</strong>
+*   Если отдел продаж выиграл тендер → Создаем <strong>Заказ покупателя</strong> → На его базе <strong>Заказ на производство</strong>.
+*   Если маркетологи решили сделать партию наконечников «про запас» → Создаем <strong>План производства</strong> → На его базе <strong>Заказ на производство</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 👥 Схема взаимодействия</h2>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">LR</span>
+<span class="w">    </span><span class="n">A</span><span class="p">[</span><span class="err">Отдел</span><span class="w"> </span><span class="err">продаж</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Заказ</span><span class="w"> </span><span class="err">покупателя</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="err">Инженер</span><span class="w"> </span><span class="err">ПДО</span><span class="p">)</span>
+<span class="w">    </span><span class="n">C</span><span class="p">[</span><span class="err">Маркетологи</span><span class="o">/</span><span class="err">Директор</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">План</span><span class="w"> </span><span class="err">на</span><span class="w"> </span><span class="err">склад</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span>
+<span class="w">    </span><span class="n">D</span><span class="p">[</span><span class="err">Главный</span><span class="w"> </span><span class="err">инженер</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Утверждение</span><span class="w"> </span><span class="err">ТЗ</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Создает</span><span class="w"> </span><span class="err">Заказ</span><span class="w"> </span><span class="err">на</span><span class="w"> </span><span class="err">пр</span><span class="o">-</span><span class="err">во</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">E</span><span class="p">{</span><span class="err">Система</span><span class="w"> </span><span class="mi">1</span><span class="err">С</span><span class="p">}</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Формирует</span><span class="w"> </span><span class="err">потребность</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="err">Отдел</span><span class="w"> </span><span class="err">снабжения</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Создает</span><span class="w"> </span><span class="err">Наряд</span><span class="o">-</span><span class="err">задания</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="err">Мастера</span><span class="w"> </span><span class="err">цехов</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--&gt;|</span><span class="err">Резервирует</span><span class="w"> </span><span class="err">материалы</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="err">Склад</span><span class="p">]</span>
+</code></pre></div>
+
+<h3 id="_2">Роли и задачи:</h3>
+<ul>
+<li><strong>Менеджер по продажам:</strong> Создает и проводит «Заказ покупателя». Контролирует сроки отгрузки.</li>
+<li><strong>Главный инженер:</strong> Проверяет техническую возможность, утверждает сложные спецификации.</li>
+<li><strong>Инженер ПДО:</strong><ul>
+<li>Создает «Заказ на производство».</li>
+<li>Проверяет наличие спецификаций.</li>
+<li>Устанавливает плановые даты начала и окончания.</li>
+<li>Запускает документ в работу.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="3-1-check-list">3. 🛠 Этап 1: Подготовка (Check-list перед стартом)</h2>
+<p>Перед созданием заказа убедитесь, что выполнены следующие условия:</p>
+<h3 id="31">3.1. Существует основание</h3>
+<ul>
+<li>✅ Для работы под клиента: Проведен <strong>«Заказ покупателя»</strong> (<code>Продажи</code> → <code>Заказы покупателей</code>).</li>
+<li>✅ Для работы на склад: Утвержден <strong>«План производства»</strong> (<code>Производство</code> → <code>Планирование</code>).</li>
+</ul>
+<h3 id="32">3.2. Готова технологическая база</h3>
+<ul>
+<li>✅ Для каждой позиции номенклатуры создана <strong>Спецификация</strong> (<code>НСИ и Администрирование</code> → <code>Номенклатура</code> → вкладка <code>Спецификации</code>).</li>
+<li>✅ В спецификации заполнен <strong>Состав</strong> (материалы) и <strong>Операции</strong> (трудоемкость).</li>
+<li>✅ Спецификация помечена флагом <strong>«Основная»</strong>.</li>
+</ul>
+<h3 id="33">3.3. (Опционально) Проверены остатки</h3>
+<p>Инженер ПДО может предварительно оценить наличие материалов:
+*   <strong>Путь:</strong> <code>Склад и доставка</code> → <code>Отчеты</code> → <code>Остатки товаров</code>.</p>
+<hr />
+<h2 id="4-2">4. 🚀 Этап 2: Создание заказа на производство</h2>
+<p>В 1С есть три способа создания документа. Выберите подходящий под вашу ситуацию.</p>
+<h3 id="1_2">🅰️ Способ 1: На основании Заказа покупателя (Рекомендуемый)</h3>
+<p><em>Используется в 90% случаев для работы с реальными клиентами.</em></p>
+<ol>
+<li><strong>Откройте Заказ покупателя:</strong><ul>
+<li>Перейдите в раздел <code>Продажи</code> → <code>Заказы покупателей</code>.</li>
+<li>Найдите нужный документ (по клиенту или номеру тендера).</li>
+</ul>
+</li>
+<li><strong>Создайте производственный заказ:</strong><ul>
+<li>Нажмите кнопку <strong>Создать на основании</strong> (вверху документа).</li>
+<li>Выберите пункт <strong>Заказ на производство</strong>.</li>
+</ul>
+</li>
+<li><strong>Проверьте автоматическое заполнение:</strong><ul>
+<li>Система перенесет Номенклатуру, Количество и Даты из заказа клиента.</li>
+<li>Автоматически подтянется <strong>Основная спецификация</strong>.</li>
+</ul>
+</li>
+<li><strong>Заполните обязательные поля:</strong><ul>
+<li><strong>Срок начала:</strong> Дата планируемого запуска в цех.</li>
+<li><strong>Срок окончания:</strong> Дата готовности к отгрузке (должна быть раньше даты отгрузки клиенту).</li>
+<li><strong>Ответственный:</strong> Инженер ПДО или Главный инженер.</li>
+</ul>
+</li>
+<li><strong>Заполните материалы:</strong><ul>
+<li>Перейдите на вкладку <strong>Материалы</strong>.</li>
+<li>Нажмите кнопку <strong>Заполнить</strong> → <strong>Заполнить по спецификации</strong>.</li>
+<li><em>Проверьте колонку «Обеспечение»:</em> Система сама подскажет, чего нет на складе (статус «Закупить») и что есть («Из запасов»).</li>
+</ul>
+</li>
+<li><strong>Проведите документ:</strong><ul>
+<li>Нажмите кнопку <strong>Провести</strong>. Статус изменится на «К выполнению».</li>
+</ul>
+</li>
+</ol>
+<h3 id="2_1">🅱️ Способ 2: На основании Плана производства (На склад)</h3>
+<p><em>Используется для серийной продукции без конкретного клиента.</em></p>
+<ol>
+<li>Перейдите в <code>Производство</code> → <code>Планирование</code> → <code>План производства</code>.</li>
+<li>Откройте утвержденный план.</li>
+<li>Нажмите <strong>Создать на основании</strong> → <strong>Заказ на производство</strong>.</li>
+<li>Поле «Заказ покупателя» останется пустым. Заполните сроки и проведите документ аналогично Способу 1.</li>
+</ol>
+<h3 id="3">🆎 Способ 3: Ручное создание (Инициативное)</h3>
+<p><em>Для опытных образцов, тестовых партий или срочных работ.</em></p>
+<ol>
+<li>Перейдите в <code>Производство</code> → <code>Заказы на производство</code>.</li>
+<li>Нажмите кнопку <strong>Создать</strong>.</li>
+<li>Вручную выберите:<ul>
+<li><strong>Номенклатуру</strong> (что производим).</li>
+<li><strong>Количество</strong>.</li>
+<li><strong>Спецификацию</strong> (выберите из списка вручную).</li>
+</ul>
+</li>
+<li>Заполните вкладку <strong>Материалы</strong> кнопкой <strong>Заполнить по спецификации</strong>.</li>
+<li>Укажите сроки и проведите документ.</li>
+</ol>
+<hr />
+<h2 id="5">5. 🔍 Детальный разбор вкладок документа</h2>
+<p>После создания документа внимательно проверьте три главные вкладки.</p>
+<h3 id="_3">📦 Вкладка «Материалы»</h3>
+<p>Здесь формируется потребность для снабженцев.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Колонка</th>
+<th style="text-align: left;">Описание</th>
+<th style="text-align: left;">Действия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Номенклатура</strong></td>
+<td style="text-align: left;">Список сырья</td>
+<td style="text-align: left;">Заполняется авто-матически.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Плановое кол-во</strong></td>
+<td style="text-align: left;">Норма × Кол-во изделия</td>
+<td style="text-align: left;">Проверьте соответствие чертежам.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Обеспечение</strong></td>
+<td style="text-align: left;">Статус наличия</td>
+<td style="text-align: left;">🔴 <strong>Закупить</strong> (нет на складе) <br> 🟢 <strong>Из запасов</strong> (есть на складе) <br> 🟡 <strong>Часть запасов</strong> (хватает частично)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Склад</strong></td>
+<td style="text-align: left;">Откуда брать</td>
+<td style="text-align: left;">Если статус «Из запасов», укажите конкретный склад.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Если колонка «Обеспечение» показывает «Закупить», обязательно передайте информацию снабженцу! Без этого материал не придет в цех.</p>
+</blockquote>
+<h3 id="_4">⚙️ Вкладка «Операции»</h3>
+<p>Здесь планируется загрузка цехов и расчет зарплаты.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Колонка</th>
+<th style="text-align: left;">Описание</th>
+<th style="text-align: left;">Действия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Операция</strong></td>
+<td style="text-align: left;">Этап (Токарная, Сборка)</td>
+<td style="text-align: left;">Из спецификации.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Подразделение</strong></td>
+<td style="text-align: left;">Цех-исполнитель</td>
+<td style="text-align: left;">Убедитесь, что выбран верный цех (Токарный/Сборочный).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Норма времени</strong></td>
+<td style="text-align: left;">Плановые часы</td>
+<td style="text-align: left;">Нужно для расчета мощности и зарплаты.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сроки операции</strong></td>
+<td style="text-align: left;">Начало/Конец этапа</td>
+<td style="text-align: left;">Можно сдвинуть относительно общих сроков заказа.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">📋 Вкладка «Дополнительно»</h3>
+<ul>
+<li><strong>Приоритет:</strong> Установите «Высокий» для срочных тендерных заказов. Это повлияет на приоритет обеспечения материалами.</li>
+<li><strong>Комментарий:</strong> Внутренние заметки для мастеров (например, «Использовать партию стали №123»).</li>
+</ul>
+<hr />
+<h2 id="6">6. ⚡ Что происходит после проведения?</h2>
+<p>Как только вы нажали кнопку <strong>Провести</strong>, в системе автоматически запускаются процессы:</p>
+<ol>
+<li><strong>Формирование потребности:</strong><ul>
+<li>Данные попадают в отчет <code>Расчет потребностей</code> (<code>Закупки</code> → <code>Планирование</code>). Снабженец видит, что нужно купить.</li>
+</ul>
+</li>
+<li><strong>Резервирование (если включено):</strong><ul>
+<li>Материалы, которые есть на складе, резервируются именно под этот заказ. Другие заказы не смогут их забрать.</li>
+</ul>
+</li>
+<li><strong>Создание Наряд-заданий (опционально):</strong><ul>
+<li>Если в настройках указано автосоздание, для каждого цеха генерируется документ <code>Наряд-задание</code>, который увидит Мастер цеха.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="7">7. 📊 Контроль исполнения</h2>
+<p>Как отслеживать статус заказа?</p>
+<h3 id="71">7.1. Монитор заказов</h3>
+<p><strong>Путь:</strong> <code>Производство</code> → <code>Заказы на производство</code>
+Обратите внимание на столбец <strong>Статус</strong>:
+*   🟡 <strong>К выполнению:</strong> Документ проведен, но производство еще не началось (или материалы не выданы).
+*   🟠 <strong>В работе:</strong> Материалы частично списаны, идут отчеты производства.
+*   🟢 <strong>Выполнен:</strong> Продукция выпущена и оприходована на склад.
+*   ⚪ <strong>Закрыт:</strong> Все документы закрыты, себестоимость рассчитана.</p>
+<h3 id="72">7.2. Отчет «Выпуск продукции по заказам»</h3>
+<p><strong>Путь:</strong> <code>Производство</code> → <code>Отчеты</code> → <code>Выпуск продукции по заказам</code>
+Показывает прогресс: сколько планировали vs сколько сделали фактически.</p>
+<h3 id="73">7.3. Отчет «Незавершенное производство (НЗП)»</h3>
+<p><strong>Порт:</strong> <code>Производство</code> → <code>Отчеты</code> → <code>Незавершенное производство</code>
+Показывает, какие материалы уже «зависли» в цеху по этому заказу, но еще не стали готовым изделием.</p>
+<hr />
+<h2 id="8">8. ⛔ Типичные ошибки и решения</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Ошибка</th>
+<th style="text-align: left;">Последствие</th>
+<th style="text-align: left;">Как предотвратить</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Нет спецификации</strong></td>
+<td style="text-align: left;">Вкладка «Материалы» пустая. Потребность не считается.</td>
+<td style="text-align: left;">Создать спецификацию <strong>до</strong> создания заказа.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Забыли нажать «Заполнить по спецификации»</strong></td>
+<td style="text-align: left;">В документе пусто, снабженец не видит потребность.</td>
+<td style="text-align: left;">Всегда проверяйте вкладку «Материалы» после создания.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Не указан срок окончания</strong></td>
+<td style="text-align: left;">Невозможно построить план загрузки цехов.</td>
+<td style="text-align: left;">Заполнять даты обязательно.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Неверная спецификация</strong></td>
+<td style="text-align: left;">Списали не тот металл или не те нормы.</td>
+<td style="text-align: left;">Проверять, какая спецификация стоит «Основной» в карточке товара.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Заказ не проведен</strong></td>
+<td style="text-align: left;">Система считает его черновиком. Никаких движений нет.</td>
+<td style="text-align: left;">Проверять галочку проведения вверху документа.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-">9. ✅ Чек-лист перед запуском в работу</h2>
+<p>Перед тем как сказать «Запускаем», проверьте:</p>
+<ul>
+<li>[ ] Основание есть (Заказ покупателя или План).</li>
+<li>[ ] Спецификация создана и активна.</li>
+<li>[ ] Вкладка «Материалы» заполнена (не пуста!).</li>
+<li>[ ] Статус обеспечения проверен (понятно, что закупать, а что брать со склада).</li>
+<li>[ ] Сроки начала и окончания указаны реалистично.</li>
+<li>[ ] Документ проведен (статус «К выполнению»).</li>
+<li>[ ] Снабженец уведомлен о потребности (через отчет «Расчет потребностей»).</li>
+</ul>
+<hr />
+<h2 id="10">10. ➡️ Следующие шаги</h2>
+<p>После создания заказа на производство эстафета переходит к другим отделам:</p>
+<ol>
+<li><strong>Отдел снабжения:</strong> Формирует <code>Заказы поставщикам</code> на основе возникшей потребности.</li>
+<li><strong>Склад:</strong> Подготавливает материалы к выдаче (резерв).</li>
+<li><strong>Мастера цехов:</strong> Получают <code>Наряд-задания</code> и начинают работу.</li>
+</ol>
+<hr />
+<p><em>Документ разработан для внутреннего использования ООО «КБМ». Копирование без согласования запрещено.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
